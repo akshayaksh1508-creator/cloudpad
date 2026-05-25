@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CloudPad | Share Files Instantly</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="bg-blur one"></div>
+  <div class="bg-blur two"></div>
+
+  <nav class="navbar">
+    <div class="brand">
+      <div class="logo">C</div>
+      <span>CloudPad</span>
+    </div>
+    <a href="https://github.com" target="_blank" class="nav-link">GitHub</a>
+  </nav>
+
+  <main>
+    <section id="homePage" class="hero page">
+      <div class="hero-content">
+        <div class="badge">Dontpad style file sharing</div>
+        <h1>Upload and share files using one simple room link.</h1>
+        <p>Create a room, upload PDF, Word, Excel, PPT, images or ZIP files, and share the room URL with anyone.</p>
+
+        <div class="room-box">
+          <input id="roomInput" type="text" placeholder="Enter room name, example: akshay-notes" />
+          <button id="joinBtn">Open Room</button>
+        </div>
+
+        <div class="features">
+          <div>PDF</div>
+          <div>Word</div>
+          <div>Excel</div>
+          <div>PPT</div>
+          <div>Images</div>
+          <div>ZIP</div>
+        </div>
+      </div>
+
+      <div class="preview-card">
+        <div class="preview-top">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="upload-illustration">
+          <div class="cloud">☁</div>
+          <h3>Drag. Upload. Share.</h3>
+          <p>No login required for local version.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="roomPage" class="page room-page hidden">
+      <div class="room-header">
+        <div>
+          <p class="small-title">Current Room</p>
+          <h2 id="roomTitle">Room</h2>
+          <p id="roomLink" class="room-link"></p>
+        </div>
+        <div class="header-actions">
+          <button id="copyBtn" class="secondary-btn">Copy Link</button>
+          <button id="homeBtn" class="secondary-btn">Home</button>
+        </div>
+      </div>
+
+      <div class="upload-panel" id="dropZone">
+        <input id="fileInput" type="file" multiple hidden accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.png,.jpg,.jpeg,.zip,.txt" />
+        <div class="upload-icon">⇧</div>
+        <h3>Drop your files here</h3>
+        <p>or click to browse files up to 25 MB each</p>
+        <button id="browseBtn">Choose Files</button>
+      </div>
+
+      <div class="toolbar">
+        <h3>Uploaded Files</h3>
+        <input id="searchInput" type="text" placeholder="Search files..." />
+      </div>
+
+      <div id="message" class="message"></div>
+      <div id="filesGrid" class="files-grid"></div>
+    </section>
+  </main>
+
+  <template id="fileCardTemplate">
+    <article class="file-card">
+      <div class="file-icon"></div>
+      <div class="file-info">
+        <h4></h4>
+        <p></p>
+      </div>
+      <div class="file-actions">
+        <a class="download-btn" target="_blank" download>Download</a>
+        <button class="delete-btn">Delete</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
